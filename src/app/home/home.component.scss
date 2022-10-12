@@ -1,0 +1,22 @@
+@import "../../assets/partials/_colors";
+
+.nav-text {
+  color: $primary-text-color;
+}
+
+.slogan {
+  font-family: "Libre Baskerville", serif;
+  font-size: 5.2rem;
+  padding: 0;
+  color: #000;
+}
+
+.landing-image {
+  height: 700px;
+  width: auto;
+  float: right;
+}
+
+.text-image {
+  height: 6rem;
+}

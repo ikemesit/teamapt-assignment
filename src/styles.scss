@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./assets/partials/_colors";
+
+html,
+body {
+  background-color: $pearl-white;
+  font-family: "Noto Sans Ethiopic", sans-serif;
+  color: $primary-text-color;
+}
