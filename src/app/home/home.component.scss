@@ -20,3 +20,120 @@
 .text-image {
   height: 6rem;
 }
+
+.cta-btn {
+  background-color: $fiery-orange;
+}
+
+.section-2 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  &__highlight {
+    color: $fiery-orange;
+  }
+
+  &__content-block {
+    background-color: $light-lavender;
+    min-height: 100%;
+  }
+
+  &__lead-text {
+    font-family: "Libre Baskerville", serif;
+    font-size: 2.8rem;
+    color: $midnight;
+    font-weight: 550;
+  }
+
+  &__subhead {
+    color: $midnight;
+    font-size: 1.2rem;
+    letter-spacing: 0.025em;
+    text-align: left;
+    max-width: 200px;
+  }
+}
+
+.section-3 {
+  padding-top: 180px;
+  padding-bottom: 180px;
+
+  &__cta-btn {
+    border: 2px solid $fiery-orange;
+    color: $fiery-orange;
+  }
+
+  &__highlight {
+    color: $fiery-orange;
+  }
+
+  &__lead-text {
+    font-family: "Libre Baskerville", serif;
+    font-size: 2.9rem;
+    color: $midnight;
+    font-weight: 550;
+  }
+
+  &__prod-title {
+    font-family: "Libre Baskerville", serif;
+    color: $midnight;
+    font-weight: 550;
+  }
+}
+
+.section-4 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  &__content-block {
+    background-color: $pale-rose;
+    min-height: 100%;
+  }
+
+  &__lead-text {
+    font-family: "Libre Baskerville", serif;
+    font-size: 3rem;
+    color: $midnight;
+    font-weight: 550;
+  }
+}
+
+.pill-image {
+  width: 420px;
+  height: 600px;
+  background: url("../../assets/images/model2.png"), $pale-orange;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 100%;
+  clip-path: inset(0% 0% 0% 0% round 240px);
+  animation: scale-bg 1500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes scale-bg {
+  0% {
+    background-size: 90%;
+    transform: scale(1.2);
+  }
+
+  100% {
+    background-size: 130%;
+    transform: scale(1);
+  }
+}
+
+.pill-text {
+  width: 150px;
+  height: 200px;
+  clip-path: inset(0% 0% 0% 0% round 240px 240px 0px 0px);
+
+  &__serif {
+    font-family: "Libre Baskerville", serif;
+    color: $fiery-orange;
+  }
+}
