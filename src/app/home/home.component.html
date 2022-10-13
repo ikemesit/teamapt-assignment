@@ -24,7 +24,7 @@
         </span>
       </div>
 
-      <div class="w-[400px] mb-10">
+      <div class="w-[400px] mb-10 section-1__text">
         <p class="font-medium text-lg text-left">We want to bring to the world through our products that very special
           feeling joy,
           healthy
@@ -50,7 +50,7 @@
               clip-rule="evenodd" />
           </svg>
 
-          <a href="#" class="font-semibold text-xl text-black ml-2">How to use</a>
+          <a href="#" class="font-semibold text-xl text-black ml-2 section-1__link">How to use</a>
         </span>
       </div>
 
@@ -61,14 +61,38 @@
   </div>
 </section>
 
-<section class="w-full min-h-screen section-2">
+<section class="w-full min-h-screen section-2"
+  waIntersectionObserver
+  waIntersectionThreshold="0.2">
   <div class="image-block w-1/3 h-full relative">
-    <img src="assets/images/packaging.png" class="absolute top-24 -right-32" alt="">
+    <img src="assets/images/packaging.png" class="absolute top-24 -right-32 z-50" alt="">
   </div>
-  <div class="section-2__content-block w-2/3 h-screen">
+  <div class="section-2__content-block w-2/3 h-screen relative">
 
-    <div class="pt-48 pl-52 pr-48">
-      <h4 class="section-2__lead-text antialiased leading-relaxed">The self care brand that's
+    <div class="absolute -top-20 left-60">
+      <svg
+        #star
+        width="150px"
+        height="150px"
+        class="absolute top-0 left-0"
+        viewBox="0 0 461 461"
+        version="1.1"
+        (waIntersectionObservee)="onIntersection($event, star, 'rotate-star')"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M230.5 0L274.604 124.023L393.488 67.5118L336.977 186.396L404.229 210.311L461 230.5L336.977 274.604L393.488 393.488L274.604 336.977L230.501 461L186.396 336.977L67.5124 393.489L124.023 274.605L0 230.501L124.023 186.396L67.5112 67.5126L186.395 124.023L230.5 0Z"
+          id="Star" fill="#ff8159" fill-rule="evenodd" stroke="#ffffff" stroke-width="5" />
+      </svg>
+
+      <p class="text-white -rotate-45 absolute top-[62px] left-[54px] z-40">NEW</p>
+    </div>
+
+    <div class="pt-48 pl-52 pr-48 translate-y-3/4"
+      #section2Text
+      (waIntersectionObservee)="onIntersection($event, section2Text, 'slideIn-Up')">
+      <h4 class="section-2__lead-text antialiased leading-relaxed"
+        #leadText>The self care brand that's
         setting a
         new
         <span class="section-2__highlight">standard Clean</span>
@@ -89,77 +113,90 @@
   </div>
 </section>
 
-<section class="w-full min-h-screen section-3 grid grid-cols-12 gap-6 px-36">
-  <div class="col-span-4 space-y-6">
-    <h4 class="section-3__lead-text antialiased leading-relaxed">Trending on <span
-        class="section-2__highlight">Essentials</span></h4>
-    <p>Made with nature's best ingredients - our products' transparent ingredient.Fear of God Essentials.</p>
-    <button
-      class="section-3__cta-btn min-w-48 rounded-full px-6 py-4 text-center flex flex-row justify-center items-center">
-      Browse All Products
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-        stroke="currentColor"
-        class="w-6 h-6 ml-2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-      </svg>
-    </button>
+<section class="w-full min-h-screen section-3">
+  <div class="grid grid-cols-12 gap-6 px-36"
+    #section3Trigger
+    waIntersectionObserver
+    waIntersectionThreshold="0.2"
+    (waIntersectionObservee)="onIntersection($event, section3Trigger, 'slideIn-cols-In')">
+    <div class="col-span-4 space-y-6">
+      <h4 class="section-3__lead-text antialiased leading-relaxed">Trending on <span
+          class="section-2__highlight">Essentials</span></h4>
+      <p>Made with nature's best ingredients - our products' transparent ingredient.Fear of God Essentials.</p>
+      <button
+        class="section-3__cta-btn min-w-48 rounded-full px-6 py-4 text-center flex flex-row justify-center items-center">
+        Browse All Products
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 ml-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+        </svg>
+      </button>
+
+    </div>
+    <div class="col-span-4">
+      <div class="w-100 h-4/5 p-8 bg-white flex flex-col justify-center items-center">
+        <img src="assets/images/product1.jpg" alt="" class="section-3__product scale-90">
+      </div>
+      <div class="w-100 h-1/5 text-center my-4">
+        <p class="text-xl font-semibold section-3__prod-title">Shower Butter</p>
+        <p class="text-xl">$190.99</p>
+      </div>
+    </div>
+    <div class="col-span-4">
+      <div class="w-100 h-4/5 p-8 bg-white flex flex-col justify-center items-center">
+        <img src="assets/images/product2.jpg" alt="" class="section-3__product scale-90">
+      </div>
+      <div class="w-100 h-1/5 text-center my-4">
+        <p class="text-xl font-semibold section-3__prod-title">Luxury Oil Gel</p>
+        <p class="text-xl">$190.99</p>
+      </div>
+    </div>
+    <div class="col-span-4">
+      <div class="w-100 h-4/5 p-8 bg-white flex flex-col justify-center items-center">
+        <img src="assets/images/product3.jpg" alt="" class="section-3__product scale-90">
+      </div>
+      <div class="w-100 h-1/5 text-center my-4">
+        <p class="text-xl font-semibold section-3__prod-title">Body Oil</p>
+        <p class="text-xl">$190.99</p>
+      </div>
+    </div>
+    <div class="col-span-4">
+      <div class="w-100 h-4/5 p-8 bg-white flex flex-col justify-center items-center">
+        <img src="assets/images/product4.jpg" alt="" class="section-3__product scale-90">
+      </div>
+      <div class="w-100 h-1/5 text-center my-4">
+        <p class="text-xl font-semibold section-3__prod-title">Sunrise Shampoo</p>
+        <p class="text-xl">$190.99</p>
+      </div>
+    </div>
+    <div class="col-span-4">
+      <div class="w-100 h-4/5 p-8 bg-white flex flex-col justify-center items-center">
+        <img src="assets/images/product5.jpg" alt="" class="section-3__product scale-90">
+      </div>
+      <div class="w-100 h-1/5 text-center my-4">
+        <p class="text-xl font-semibold section-3__prod-title">Luxury Oil Gel</p>
+        <p class="text-xl">$190.99</p>
+      </div>
+    </div>
   </div>
-  <div class="col-span-4">
-    <div class="w-100 h-4/5 p-8 bg-white flex flex-col justify-center items-center">
-      <img src="assets/images/product1.jpg" alt="" class="section-3__product scale-90">
-    </div>
-    <div class="w-100 h-1/5 text-center my-4">
-      <p class="text-xl font-semibold section-3__prod-title">Shower Butter</p>
-      <p class="text-xl">$190.99</p>
-    </div>
-  </div>
-  <div class="col-span-4">
-    <div class="w-100 h-4/5 p-8 bg-white flex flex-col justify-center items-center">
-      <img src="assets/images/product2.jpg" alt="" class="section-3__product scale-90">
-    </div>
-    <div class="w-100 h-1/5 text-center my-4">
-      <p class="text-xl font-semibold section-3__prod-title">Luxury Oil Gel</p>
-      <p class="text-xl">$190.99</p>
-    </div>
-  </div>
-  <div class="col-span-4">
-    <div class="w-100 h-4/5 p-8 bg-white flex flex-col justify-center items-center">
-      <img src="assets/images/product3.jpg" alt="" class="section-3__product scale-90">
-    </div>
-    <div class="w-100 h-1/5 text-center my-4">
-      <p class="text-xl font-semibold section-3__prod-title">Body Oil</p>
-      <p class="text-xl">$190.99</p>
-    </div>
-  </div>
-  <div class="col-span-4">
-    <div class="w-100 h-4/5 p-8 bg-white flex flex-col justify-center items-center">
-      <img src="assets/images/product4.jpg" alt="" class="section-3__product scale-90">
-    </div>
-    <div class="w-100 h-1/5 text-center my-4">
-      <p class="text-xl font-semibold section-3__prod-title">Sunrise Shampoo</p>
-      <p class="text-xl">$190.99</p>
-    </div>
-  </div>
-  <div class="col-span-4">
-    <div class="w-100 h-4/5 p-8 bg-white flex flex-col justify-center items-center">
-      <img src="assets/images/product5.jpg" alt="" class="section-3__product scale-90">
-    </div>
-    <div class="w-100 h-1/5 text-center my-4">
-      <p class="text-xl font-semibold section-3__prod-title">Luxury Oil Gel</p>
-      <p class="text-xl">$190.99</p>
-    </div>
-  </div>
+
 
 </section>
 
-<section class="w-full h-screen section-4">
+<section class="w-full h-screen section-4"
+  #section3Trigger
+  waIntersectionObserver
+  waIntersectionThreshold="0.2">
   <div class="section-4__content-block w-4/5 h-full py-36">
     <div class="w-[500px] space-y-6 ml-36">
       <h4 class="section-4__lead-text antialiased leading-normal">We make going all natural <span
           class="section-2__highlight">Beauty</span>.</h4>
       <p>Made with nature's best ingredients - our products' transparent ingredient lists allow you to know.</p>
 
-      <div class="flex flex-row justify-start items-baseline mt-6">
+      <div class="flex flex-row justify-start items-baseline mt-6"
+        #section4Pills
+        (waIntersectionObservee)="onIntersection($event, section4Pills, 'slideIn-Bottom-Left')">
 
         <div
           class="pill-text bg-gradient-to-b from-white to-transparent text-center px-8 py-14 rotate-[30deg] mr-12">
@@ -190,19 +227,28 @@
 
   </div>
   <div class="w-1/5 relative">
-    <div class="pill-image absolute -left-2/3 top-24"></div>
+    <div class="section-4__pill-image absolute -left-2/3 top-24"
+      #section4Image
+      (waIntersectionObservee)="onIntersection($event, section4Image, 'scale-bg')"></div>
   </div>
 </section>
 
-<section class="w-full h-screen section-5 grid grid-cols-12 gap-0 px-36 py-24">
+<section class="w-full h-screen section-5 grid grid-cols-12 gap-0 px-36 py-24"
+  waIntersectionObserver
+  waIntersectionThreshold="0.2">
   <div class="col-span-6">
-    <div class="arc-image">
+    <div class="arc-image" #arcImage (waIntersectionObservee)="onIntersection($event, arcImage, 'scale-bg')">
     </div>
   </div>
   <div class="col-span-6">
-    <h4 class="section-5__lead-text">You have <span class="section-5__highlight">questions,</span> we have answers.</h4>
+    <h4 class="section-5__lead-text"
+      #section5LeadText
+      (waIntersectionObservee)="onIntersection($event, section5LeadText, 'slideIn-Up')">
+      You have <span class="section-5__highlight">questions,</span> we have answers.</h4>
 
-    <div class="w-[500px]">
+    <div class="w-[500px]"
+      #section5Text
+      (waIntersectionObservee)="onIntersection($event, section5Text, 'slideIn-Up')">
       <div class="py-4 section-5__box mt-4">
         <div class="flex flex-row justify-between items-center section-5__box-header py-4">
           <p class="text-xl font-semibold">Where are products made?</p>
@@ -242,8 +288,12 @@
   </div>
 </section>
 
-<section class="w-full h-screen section-6 px-36 relative">
-  <div class="w-4/5 h-[70vh] bg-white p-12 flex flex-col justify-between items-start">
+<section class="w-full h-screen section-6 px-36 relative"
+  waIntersectionObserver
+  waIntersectionThreshold="0.2">
+  <div class="w-4/5 h-[70vh] bg-white p-12 flex flex-col justify-between items-start scale-0"
+    #section6ContentBox
+    (waIntersectionObservee)="onIntersection($event, section6ContentBox, 'slideIn-Right')">
     <p class="flex flex-row justify-start items-center mb-4">
       <img src="assets/images/comma.png" alt="" class="-ml-6 rotate-180 scale-75">
       <img src="assets/images/comma.png" alt="" class="-ml-12 rotate-180 scale-75">
@@ -262,29 +312,50 @@
   </div>
 
   <div class="w-1/5">
-    <div class="section-6__rounded-image"></div>
+    <div class="section-6__rounded-image" #section6Image
+      (waIntersectionObservee)="onIntersection($event, section6Image, 'scale-bg')"></div>
   </div>
   <div class="h-[30vh] flex flex-row justify-between items-center -px-18">
-    <img src="assets/images/logo1.jpg" alt="" class="scale-75 place-items-center">
-    <img src="assets/images/logo2.jpg" alt="" class="scale-75 place-items-center">
-    <img src="assets/images/logo3.jpg" alt="" class="scale-75 place-items-center">
-    <img src="assets/images/logo4.jpg" alt="" class="scale-75 place-items-center">
-    <img src="assets/images/logo5.jpg" alt="" class="scale-75 place-items-center">
+    <img src="assets/images/logo1.jpg" alt="" class="scale-75 place-items-center"
+      #section6Logo1
+      (waIntersectionObservee)="onIntersection($event, section6Logo1, 'slideIn-Right')">
+    <img src="assets/images/logo2.jpg" alt="" class="scale-75 place-items-center"
+      #section6Logo2
+      (waIntersectionObservee)="onIntersection($event, section6Logo2, 'slideIn-Right')">
+    <img src="assets/images/logo3.jpg" alt="" class="scale-75 place-items-center"
+      #section6Logo3
+      (waIntersectionObservee)="onIntersection($event, section6Logo3, 'slideIn-Right')">
+    <img src="assets/images/logo4.jpg" alt="" class="scale-75 place-items-center"
+      #section6Logo4
+      (waIntersectionObservee)="onIntersection($event, section6Logo4, 'slideIn-Right')">
+    <img src="assets/images/logo5.jpg" alt="" class="scale-75 place-items-center"
+      #section6Logo5
+      (waIntersectionObservee)="onIntersection($event, section6Logo5, 'slideIn-Right')">
   </div>
 </section>
 
-<section class="w-full min-h-screen section-7 relative pt-20">
+<section class="w-full min-h-screen section-7 relative pt-20"
+  waIntersectionObserver
+  waIntersectionThreshold="0.2">
   <div class="grid grid-cols-12 gap-6 absolute top-5 left-[144px] right-[144px]">
-    <div class="col-span-3">
+    <div class="col-span-3 translate-x-full"
+      #section7Image1
+      (waIntersectionObservee)="onIntersection($event, section7Image1, 'slideIn-Right')">
       <img src="assets/images/footer-img1.jpg" alt="">
     </div>
-    <div class="col-span-3">
+    <div class="col-span-3 translate-x-full"
+      #section7Image2
+      (waIntersectionObservee)="onIntersection($event, section7Image2, 'slideIn-Right')">
       <img src="assets/images/footer-img2.jpg" alt="">
     </div>
-    <div class="col-span-3">
+    <div class="col-span-3 translate-x-full"
+      #section7Image3
+      (waIntersectionObservee)="onIntersection($event, section7Image3, 'slideIn-Right')">
       <img src="assets/images/footer-img3.jpg" alt="">
     </div>
-    <div class="col-span-3 section-7__image-box">
+    <div class="col-span-3 section-7__image-box translate-x-full"
+      #section7Image4
+      (waIntersectionObservee)="onIntersection($event, section7Image4, 'slideIn-Right')">
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
         width="50" height="50"
         viewBox="0 0 172 172"
@@ -321,10 +392,17 @@
     </div>
   </div>
 
-  <div class="section-7__footer">
+  <div class="section-7__footer"
+    waIntersectionObserver
+    waIntersectionThreshold="0.2">
     <div class="section-7__footer-nav grid grid-cols-12 gap-8">
-      <div class="col-span-3">
-        <h4>Glow</h4>
+      <div class="col-span-3"
+        #footerCol1
+        (waIntersectionObservee)="onIntersection($event, footerCol1, 'slideIn-Up')">
+        <div class="logo-alt mb-4">
+          <h1>Glow</h1>
+          <div class="rounded-full ml-2 w-2 h-2 bg-orange-600"></div>
+        </div>
         <p class="capitalize font-light text-white/80">Keep up with our new releases, beauty tips and what Emma's been
           up to</p>
 
@@ -421,7 +499,9 @@
           </div>
         </div>
       </div>
-      <div class="col-span-2">
+      <div class="col-span-2"
+        #footerCol2
+        (waIntersectionObservee)="onIntersection($event, footerCol2, 'slideIn-Up')">
         <ul class="leading-10">
           <li class="font-bold">Company</li>
           <li class="font-thin">About</li>
@@ -430,7 +510,9 @@
           <li class="font-thin">Newsroom</li>
         </ul>
       </div>
-      <div class="col-span-2">
+      <div class="col-span-2"
+        #footerCol3
+        (waIntersectionObservee)="onIntersection($event, footerCol3, 'slideIn-Up')">
         <ul class="leading-10">
           <li class="font-bold">Resources</li>
           <li class="font-thin">College</li>
@@ -439,7 +521,9 @@
           <li class="font-thin">StreamKit</li>
         </ul>
       </div>
-      <div class="col-span-2">
+      <div class="col-span-2"
+        #footerCol4
+        (waIntersectionObservee)="onIntersection($event, footerCol4, 'slideIn-Up')">
         <ul class="leading-10">
           <li class="font-bold">Terms & Condition</li>
           <li class="font-thin">Policy</li>
@@ -448,7 +532,9 @@
           <li class="font-thin">Tracking</li>
         </ul>
       </div>
-      <div class="col-span-3">
+      <div class="col-span-3"
+        #footerCol5
+        (waIntersectionObservee)="onIntersection($event, footerCol5, 'slideIn-Up')">
         <p class="font-bold text-white leading-10">Subscribe</p>
         <p class="text-white/70 text-light my-6">Get 10% off your first order</p>
         <div class="rounded-full w-auto p-2 bg-white/10 border-0 flex flex-row justify-start items-center">
@@ -462,8 +548,11 @@
   </div>
 
   <div class="section-7__sub-footer">
-    <div class="border-t-2 border-white/10 w-[500px] mb-6"></div>
-    <p>Copyright &copy; 2022 Musemind | All rights reserved.</p>
+    <div class="border-t-2 border-white/10 w-[500px] mb-6" #footerSub1
+      (waIntersectionObservee)="onIntersection($event, footerSub1, 'slideIn-Up')"></div>
+    <p #footerSub2
+      (waIntersectionObservee)="onIntersection($event, footerSub2, 'slideIn-Up')">Copyright &copy; 2022 Musemind | All
+      rights reserved.</p>
   </div>
 
 </section>

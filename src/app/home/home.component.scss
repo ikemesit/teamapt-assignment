@@ -15,6 +15,21 @@
   }
 }
 
+.logo-alt {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: baseline;
+
+  h1 {
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 550;
+    padding: 0;
+  }
+}
+
 .nav-text {
   color: $primary-text-color;
 }
@@ -24,20 +39,32 @@
   font-size: 5.2rem;
   padding: 0;
   color: #000;
+  animation: slideIn-Up 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 }
 
 .landing-image {
   height: 700px;
   width: auto;
   float: right;
+  animation: slideIn-Up 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 }
 
 .text-image {
   height: 6rem;
+  animation: slideIn-Up 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 }
 
 .cta-btn {
   background-color: $fiery-orange;
+  animation: slideIn-Up 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.section-1__text {
+  animation: slideIn-Up 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.section-1__link {
+  animation: slideIn-Up 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 }
 
 .section-2 {
@@ -96,6 +123,16 @@
     color: $midnight;
     font-weight: 550;
   }
+
+  .col-span-4 {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  .slideIn-cols-In {
+    .col-span-4 {
+      animation: slideIn-Right 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    }
+  }
 }
 
 .section-4 {
@@ -115,30 +152,16 @@
     color: $midnight;
     font-weight: 550;
   }
-}
 
-.pill-image {
-  width: 420px;
-  height: 600px;
-  background: url("../../assets/images/model2.png"), $pale-orange;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position-x: 50%;
-  background-position-y: 100%;
-  clip-path: inset(0% 0% 0% 0% round 240px);
-  animation: scale-bg 1500ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  animation-fill-mode: forwards;
-}
-
-@keyframes scale-bg {
-  0% {
-    background-size: 90%;
-    transform: scale(1.2);
-  }
-
-  100% {
-    background-size: 130%;
-    transform: scale(1);
+  &__pill-image {
+    width: 420px;
+    height: 600px;
+    background: url("../../assets/images/model2.png"), $pale-orange;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 100%;
+    clip-path: inset(0% 0% 0% 0% round 240px);
   }
 }
 
@@ -187,8 +210,8 @@
   background-position-x: 120%;
   background-position-y: 100%;
   clip-path: inset(0% 0% 0% 0% round 240px 240px 0px 0px);
-  animation: scale-bg 1500ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  animation-fill-mode: forwards;
+  // animation: scale-bg 1500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  // animation-fill-mode: forwards;
 }
 
 .section-6 {
@@ -215,8 +238,8 @@
     background-position-x: 50%;
     background-position-y: 0%;
     clip-path: circle(50%);
-    animation: scale-bg 1500ms cubic-bezier(0.075, 0.82, 0.165, 1);
-    animation-fill-mode: forwards;
+    // animation: scale-bg 1500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    // animation-fill-mode: forwards;
   }
 }
 
@@ -272,5 +295,96 @@
       color: transparentize(#fff, 0.6);
       text-align: center;
     }
+  }
+}
+
+.rotate-star {
+  animation: rotate-infinite 6s linear infinite;
+  transform-origin: 50% 50%;
+  display: inline-block;
+}
+
+.slideIn-Up {
+  animation: slideIn-Up 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.slideIn-Right {
+  animation: slideIn-Right 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.scale-bg {
+  animation: scale-bg 1500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-fill-mode: forwards;
+}
+
+.slideIn-Bottom-Left {
+  animation: slideIn-Bottom-Left 0.9s cubic-bezier(0.215, 0.61, 0.355, 1)
+    forwards;
+}
+
+.grow-Left {
+  animation: slideIn-Bottom-Left 0.9s cubic-bezier(0.215, 0.61, 0.355, 1)
+    forwards;
+}
+
+@keyframes rotate-infinite {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideIn-Up {
+  0% {
+    transform: translate3d(0, 75%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0%, 0);
+  }
+}
+
+@keyframes slideIn-Right {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes scale-bg {
+  0% {
+    background-size: 90%;
+    transform: scale(1.2);
+  }
+
+  100% {
+    background-size: 130%;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn-Bottom-Left {
+  0% {
+    transform: translate3d(-50%, 50%, 0);
+  }
+
+  100% {
+    transform: translate3d(0%, 0%, 0);
+  }
+}
+
+@keyframes grow-left {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
