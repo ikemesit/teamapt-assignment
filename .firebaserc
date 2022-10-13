@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "personal-90858": {
+      "hosting": {
+        "teamapt-assignment": [
+          "personal-90858"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "personal-90858"
+  }
+}
